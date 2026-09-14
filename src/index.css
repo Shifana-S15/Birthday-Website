@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #fffaf5;
+  color: #3f302b;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #e8b7bd;
+  color: #3f302b;
+}
+
+/* Elegant heading font */
+.font-serif {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+/* Handwritten scrapbook text */
+.font-hand {
+  font-family: "Comic Sans MS", "Bradley Hand", cursive;
+}
+
+/* Small uppercase labels */
+.font-clean {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Soft paper texture */
+.paper-texture {
+  background-color: #fffaf5;
+  background-image:
+    radial-gradient(
+      rgba(80, 50, 40, 0.035) 1px,
+      transparent 1px
+    );
+  background-size: 7px 7px;
+}
+
+/* Floating decorative element */
+.float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+@keyframes floatSlow {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Subtle fade */
+.fade-in {
+  animation: fadeIn 1.2s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

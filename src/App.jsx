@@ -4,6 +4,7 @@ import { useState } from "react";
 function App() {
   const name = "Maha";
   const [showSecret, setShowSecret] = useState(false);
+  const photo = (fileName) => `${import.meta.env.BASE_URL}photos/${fileName}`;
 
   return (
     <main className="paper-texture min-h-screen w-full overflow-x-hidden text-[#3f302b]">
@@ -297,7 +298,7 @@ function App() {
               className="bg-white p-3 sm:p-4 pb-6 sm:pb-8 shadow-[0_10px_30px_rgba(80,50,40,0.12)] rotate-[-2deg]"
             >
               <img
-                src="/photos/03.jpg"
+                src={photo("03.jpg")}
                 alt="A memory together"
                 className="w-full max-h-[70vh] object-contain"
               />
@@ -313,7 +314,7 @@ function App() {
               className="bg-white p-3 sm:p-4 pb-6 sm:pb-8 shadow-[0_10px_30px_rgba(80,50,40,0.12)] rotate-[2deg]"
             >
               <img
-                src="/photos/05.jpeg"
+                src={photo("05.jpeg")}
                 alt="A memory together"
                 className="w-full max-h-[70vh] object-contain"
               />
@@ -330,7 +331,7 @@ function App() {
               className="bg-white p-3 sm:p-4 pb-6 sm:pb-8 shadow-[0_10px_30px_rgba(80,50,40,0.12)] rotate-[-2deg]"
             >
               <img
-                src="/photos/01.jpg"
+                src={photo("01.jpg")}
                 alt="A memory together"
                 className="w-full max-h-[70vh] object-contain"
               />
@@ -346,7 +347,7 @@ function App() {
               className="bg-white p-3 sm:p-4 pb-6 sm:pb-8 shadow-[0_10px_30px_rgba(80,50,40,0.12)] rotate-[2deg]"
             >
               <img
-                src="/photos/02.jpg"
+                src={photo("02.jpg")}
                 alt="A memory together"
                 className="w-full max-h-[70vh] object-contain"
               />
@@ -382,7 +383,7 @@ function App() {
               className="bg-white p-3 sm:p-4 pb-6 sm:pb-8 shadow-[0_10px_30px_rgba(80,50,40,0.12)] rotate-[-2deg]"
             >
               <img
-                src="/photos/04.jpeg"
+                src={photo("04.jpeg")}
                 alt="A memory together"
                 className="w-full max-h-[70vh] object-contain"
               />

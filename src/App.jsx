@@ -4,6 +4,8 @@ import { useState } from "react";
 function App() {
   const name = "Maha";
   const [showSecret, setShowSecret] = useState(false);
+  const [showReminder, setShowReminder] = useState(false);
+  const [activeVideo, setActiveVideo] = useState(null);
   const photo = (fileName) => `${import.meta.env.BASE_URL}photos/${fileName}`;
 
   return (
@@ -402,6 +404,59 @@ function App() {
         </motion.div>
 
       </section>
+      <section className="paper-texture px-6 py-16 text-center">
+  <p className="font-clean text-xs uppercase tracking-[0.3em] text-[#9a746d]">
+    A few things you didn't ask for
+  </p>
+
+  <h2 className="mt-3 font-serif text-3xl text-[#5a403a]">
+    But you're getting them anyway 😂
+  </h2>
+
+  <div className="mx-auto mt-8 flex max-w-md flex-col gap-4">
+    <button
+      onClick={() => setActiveVideo("shoulder")}
+      className="rounded-full border border-[#d8aaa5] bg-[#fffaf5] px-6 py-4 font-clean text-sm tracking-wide text-[#6b4b45] shadow-sm transition hover:-translate-y-1 hover:bg-[#f8e8e7]"
+    >
+      🫂 A soft little memory
+    </button>
+
+    <button
+      onClick={() => setActiveVideo("funny")}
+      className="rounded-full border border-[#d8aaa5] bg-[#fffaf5] px-6 py-4 font-clean text-sm tracking-wide text-[#6b4b45] shadow-sm transition hover:-translate-y-1 hover:bg-[#f8e8e7]"
+    >
+      🤡 Okay… this is more like us
+    </button>
+  </div>
+</section>
+
+{activeVideo && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-5">
+    <div className="relative max-h-[90vh] w-full max-w-lg rounded-3xl bg-[#fffaf5] p-4 shadow-2xl overflow-hidden">
+      <button
+        onClick={() => setActiveVideo(null)}
+        className="absolute right-3 top-3 z-20 flex h-9 w-9 items-center justify-center rounded-full bg-white text-lg text-[#6b4b45] shadow-md"
+        aria-label="Close video"
+      >
+        ✕
+      </button>
+
+      <video
+        key={activeVideo}
+        className="max-h-[75vh] w-full rounded-2xl object-contain"
+        controls
+        autoPlay
+        playsInline
+      >
+        <source
+          src={`${import.meta.env.BASE_URL}videos/${activeVideo}.mp4`}
+          type="video/mp4"
+        />
+        Your browser does not support video playback.
+      </video>
+    </div>
+  </div>
+)}
 
       {/* ================= BUT SERIOUSLY ================= */}
 
